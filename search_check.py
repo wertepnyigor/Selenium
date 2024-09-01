@@ -35,7 +35,6 @@ try:
     # change_language = driver.find_element(By.ID, "p-lang-btn-checkbox")
     # change_language.click()
 
-
     if "wiki/Python" in driver.current_url:
         print("PASS")
     else:
