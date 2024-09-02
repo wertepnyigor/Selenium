@@ -12,9 +12,9 @@ def skip_engine_check():
     return chrome_options
 
 def create_driver(website_address):
-    driver = webdriver.Chrome(options=search_engine)
-    driver.maximize_window()
-    driver.get(website_address)
+    chrome_driver = webdriver.Chrome(options=search_engine)
+    chrome_driver.maximize_window()
+    chrome_driver.get(website_address)
 
     WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.ID, "searchbox_input"))
@@ -32,18 +32,12 @@ try:
     result = driver.find_element(By.PARTIAL_LINK_TEXT, "Python")
     result.click()
 
-    # change_language = driver.find_element(By.ID, "p-lang-btn-checkbox")
-    # change_language.click()
 
     if "wiki/Python" in driver.current_url:
-        print("PASS")
+        print("PASS - correct website was loaded")
     else:
         print("FAIL")
 
-    # language = driver.find_element(By.XPATH,"""//*[@id="search"]/div/div/input[2]""")
-    # language.click()
-    # language.clear()
-    # language.send_keys("english" + Keys.RETURN)
 
     time.sleep(5)
 
