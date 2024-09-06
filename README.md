@@ -1,1 +1,1 @@
-This file contains a test case for testing website search for Wikipedia page of Python, loading this page and checkig if current URL points to wanted site.
+This repo is created for multiple web browser tests (defined on different branches) and it is constantly developing.
