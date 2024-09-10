@@ -1,3 +1,4 @@
+
 **Test scenario** 
 Check login into Wikipedia account with non-existing credentials.
 
@@ -39,3 +40,5 @@ All steps passed as expected.
 
 **Test status**
 Passed
+=======
+This repo is created for multiple web browser tests (defined on different branches) and it is constantly developing.
