@@ -10,6 +10,7 @@ from selenium.webdriver.common.by import By
 def skip_engine_check():
     chrome_options = Options()
     chrome_options.add_argument("--disable-search-engine-choice-screen")
+
     return chrome_options
 
 def create_driver(website_address):
@@ -19,15 +20,17 @@ def create_driver(website_address):
     WebDriverWait(chrome_driver, 5).until(
         EC.presence_of_element_located((By.ID, "searchbox_input"))
     )
+
     return chrome_driver
 
 def login(login, password):
-    username_element = driver.find_element(By.ID, "wpName1")
-    username_element.clear()
-    username_element.send_keys(login)
-    password_element = driver.find_element(By.ID, "wpPassword1")
-    password_element.clear()
-    password_element.send_keys(password)
+    username_field = driver.find_element(By.ID, "wpName1")
+    username_field.clear()
+    username_field.send_keys(login)
+
+    password_field = driver.find_element(By.ID, "wpPassword1")
+    password_field.clear()
+    password_field.send_keys(password)
 
     button = driver.find_element(By.ID, "wpLoginAttempt")
     button.submit()
@@ -57,9 +60,9 @@ try:
 
     time.sleep(5)
 
-
 except:
     raise ModuleNotFoundError
 
 finally:
+
     driver.close()
