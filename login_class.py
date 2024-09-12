@@ -37,6 +37,7 @@ class CreateAccountAutomation:
     def check_login(self):
         try:
             shopping_cart = self.driver.find_element(By. ID, "shopping_cart_container")
+            print(shopping_cart.is_displayed())
             return shopping_cart.is_displayed()
         except NoSuchElementException:
             assert False, "Shopping cart is not displayed"
